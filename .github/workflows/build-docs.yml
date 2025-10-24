@@ -11,13 +11,13 @@ jobs:
     name: Node documentation
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: "lts/*"
       - name: Generate documentation
         run: make generate-docs-node
       - name: Upload documentation
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: node-doc
           path: node/apidocs/
@@ -35,7 +35,7 @@ jobs:
       - name: Generate JavaDoc
         run: make generate-docs-java
       - name: Upload JavaDoc
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: java-doc
           path: java/target/reports/apidocs/
@@ -51,7 +51,7 @@ jobs:
       - name: Generate documentation site
         run: make generate-docs
       - name: Upload documentation site
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: site-doc
           path: site/
